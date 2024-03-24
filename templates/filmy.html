@@ -8,9 +8,15 @@
     <title>Document</title>
 </head>
 <body>
-    <h2>To beda moje filmy</h2>
-    {% for film in filmy %}
-    <p>{{film}}</p>
-    {% endfor %}
+    {%if filmy|length == 0%}
+        <h2> Brak filmow</h2>
+    {%else%}
+        <h2>Ilosc filmow w BD: {{filmy|length}}</h2>
+        {% for film in filmy %}
+        <p>{{film}}</p>
+        {% endfor %}
+    {%endif%}
+
+
 </body>
 </html>
