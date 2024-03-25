@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -6,6 +7,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="{% static 'nowy.css' %}"}>
 </head>
 <body>
     {%if filmy|length == 0%}
@@ -13,7 +15,8 @@
     {%else%}
         <h2>Ilosc filmow w BD: {{filmy|length}}</h2>
         {% for film in filmy %}
-        <p>{{film}}</p>
+        <h3>{{film.title}}</h3>
+        <p>{{film.description}}</p>
         {% endfor %}
     {%endif%}
 
