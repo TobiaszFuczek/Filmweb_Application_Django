@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="{% static 'nowy.css' %}"}>
 </head>
 <body>
+
+    <a href="{% url 'new_film' %}">new film</a>
+
     {%if filmy|length == 0%}
         <h2> Brak filmow</h2>
     {%else%}
@@ -17,6 +20,8 @@
         {% for film in filmy %}
         <h3>{{film.title}}</h3>
         <p>{{film.description}}</p>
+        <a href="{% url 'edit_film' film.id %}">edit</a>
+        <a href="{% url 'delete_film' film.id %}">delete</a>
         {% endfor %}
     {%endif%}
 
