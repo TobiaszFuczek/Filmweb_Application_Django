@@ -22,7 +22,7 @@ class AdditionalInfo(models.Model):
         (1, 'Horror'),
         (2, 'Comedy'),
         (3, 'Sc-Fi'),
-        (4, 'Drahmat'),
+        (4, 'Drama'),
     }
 
     duration = models.PositiveSmallIntegerField(default=0)
