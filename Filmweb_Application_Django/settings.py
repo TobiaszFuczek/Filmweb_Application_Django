@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bootstrapform',
-    'filmyweb'
+    'rest_framework',
+    'filmyweb',
 ]
 
 MIDDLEWARE = [

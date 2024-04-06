@@ -23,7 +23,11 @@ from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
 from django.contrib.auth import logout
 from django.shortcuts import redirect
+from rest_framework import routers
+from filmyweb.views import UserView
 
+router = routers.DefaultRouter()
+router.register(r'users', UserView)
 def custom_logout(request):
     logout(request)
     return redirect('/login/')
@@ -33,6 +37,7 @@ urlpatterns = [
     path('filmy/', include('filmyweb.urls')),
     path('login/', auth_views.LoginView.as_view(), name='login'),
     path('logout/', custom_logout, name= 'logout'),
+    path('', include(router.urls)),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 

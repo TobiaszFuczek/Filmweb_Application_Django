@@ -3,7 +3,7 @@ from django.db import models
 
 class Film(models.Model):
     title = models.CharField(max_length=32, blank=False, unique=True)
-    year = models.PositiveSmallIntegerField(default=2000)
+    year = models.PositiveSmallIntegerField(default=2000, blank=True)
     description = models.TextField(default="")
     premiere = models.DateField(null=True, blank=True)
     imdb_rating = models.DecimalField(max_digits=4,decimal_places=2, null=True, blank=True)
