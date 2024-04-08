@@ -24,10 +24,11 @@ from django.contrib.auth import views as auth_views
 from django.contrib.auth import logout
 from django.shortcuts import redirect
 from rest_framework import routers
-from filmyweb.views import UserView
+from filmyweb.views import UserView, FilmView
 
 router = routers.DefaultRouter()
 router.register(r'users', UserView)
+router.register(r'films', FilmView)
 def custom_logout(request):
     logout(request)
     return redirect('/login/')
